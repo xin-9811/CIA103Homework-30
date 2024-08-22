@@ -1,6 +1,25 @@
 package hw2;
 //• 阿文很熱衷大樂透 (1 ~ 49),但他不喜歡有4的數字,不論是個位數或是十位數。請設計一隻程式,
 //輸出結果為阿文可以選擇的數字有哪些?總共有幾個?
+public class n2 {
+	public static void main(String[] agrs) {
+
+		int min = 1, max = 49, count = 0;
+		System.out.print("可以選擇的數字：");
+
+		for (int i = min; i <= max; i++) {
+			int unit = i % 10;
+			int tens = i / 10;
+
+			if (unit != 4 && tens != 4) {
+				System.out.print(i + " ");
+				count++;
+			}
+		}
+		System.out.println();
+		System.out.println("共有幾個：" + count);
+	
+	System.out.println("=================");
 
 //• 請設計一隻Java程式,輸出結果為以下:
 //1 2 3 4 5 6 7 8 9 10
@@ -13,50 +32,11 @@ package hw2;
 //1 2 3
 //1 2
 //1
-
-public class n2 {
-public static void main(String[]agrs) {
-
-	System.out.print("阿文可以選擇的數字有哪些?");
-
-	for (int i = 1; i <= 49; i++) {
-		int ten = i / 10; // 取十位數
-		int units = i % 10; // 取個位數
-
-		if (ten != 4 && units != 4) {
-
-			System.out.print(i + " ");
+	for (int n = 10; n > 0; n--) {
+		for (int j = 1; j <= n; j++) {
+			System.out.print(j + " ");
 		}
-
+		System.out.println();
 	}
-
 }
 }
-
-//
-//        // 结果存储的数组
-//        int[] validNumbers = new int[49];
-//        int count = 0; // 记录符合条件的数字个数
-//
-//        // 遍历1到49的数字
-//        for (int i = 1; i <= 49; i++) {
-//            if (!containsFour(i)) {
-//                validNumbers[count++] = i;
-//            }
-//        }
-//
-//        // 打印符合条件的数字
-//        System.out.println("阿文可以选择的数字有哪些?");
-//        for (int i = 0; i < count; i++) {
-//            System.out.print(validNumbers[i] + " ");
-//        }
-//
-//        // 打印符合条件的数字总数
-//        System.out.println("\n总共有 " + count + " 个数字。");
-//    }
-//
-//    // 检查数字是否包含4
-//    private static boolean containsFour(int number) {
-//        return String.valueOf(number).contains("4");
-//    }
-//}

@@ -6,6 +6,16 @@ package hw2;
 //DDDD
 //EEEEE
 //FFFFFF
-public class n3 {
 
+public class n3 {
+	public static void main(String[] args) {
+		int f1 = 5;
+		for (int i = 0; i <= f1; i++) {
+			char ch = (char) ('A' + i);
+			for (int j = 0; j <= i; j++) {
+				System.out.print(ch + " ");
+			}
+			System.out.println();
+		}
+	}
 }
