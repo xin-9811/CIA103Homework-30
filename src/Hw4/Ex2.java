@@ -15,7 +15,7 @@ public class Ex2 {
 				{2500,800,500,1000,1200}
 				};
 		
-		try (Scanner sc = new Scanner(System.in)) {
+		Scanner sc = new Scanner(System.in);
 			System.out.println("請輸入預借金額：");
 			int loan = sc.nextInt();
 
@@ -41,4 +41,4 @@ public class Ex2 {
 
 	}
 
-}
+
