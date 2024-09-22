@@ -9,38 +9,34 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Hw7_01 {
-	
+
 	public static void main(String[] args) {
-		int byteCount = 0;
-        int charCount = 0;
-        int lineCount = 0;
-		
+
 		File file = new File(".\\src\\Hw7\\Sample.txt");
-		try (FileReader fr = new FileReader(file);
-		BufferedReader br = new BufferedReader(fr)){
+
+		try (BufferedReader br = new BufferedReader(new FileReader(file))) {
+			long byteCount = file.length(); // 檔案的位元組數
 			
-		String line;
-		while ((line = br.readLine()) !=null) {
+			int charCount = 0; // 字元數
+			int lineCount = 0; // 行數
 			
-			lineCount++ ;
-			charCount+= line.length();
-			byteCount+=line.getBytes().length;		
-			
-		}
-		
-		System.out.println(byteCount + " 個位元組, " + 
-                charCount + " 個字元, " + lineCount + " 列資料");
-			
-		}catch(IOException e){
+			String line;
+			while ((line = br.readLine()) != null) {
+				lineCount++;
+				charCount += line.length();
+			};
+
+			System.out.println(byteCount + " 個位元組, " + charCount + " 個字元, " + lineCount + " 列資料");
+
+		} catch (IOException e) {
 			System.out.println("檔案讀取失敗: " + e.getMessage());
-				
+
 		}
-				
+
 	}
 }
 
-
-//	檢查檔案路徑正確
+//	檢查檔案路徑
 //	 String path = ".\\src\\Hw7\\Sample.txt"; 
 //     File file = new File(path);
 //
@@ -49,4 +45,3 @@ public class Hw7_01 {
 //     } else {
 //         System.out.println("路徑不正確，檔案不存在！");
 //     }
-
